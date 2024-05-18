@@ -1,0 +1,5 @@
+bin/
+*.env
+.dockerignore
+.envrc
+sql-data/

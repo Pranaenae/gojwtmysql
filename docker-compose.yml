@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.4
+    ports:
+    - 3306:3306
+    container_name: mysql
+    env_file: .sql.env
+    volumes:
+      - ./sql-data:/var/lib/mysql
+
+  app:
+    image: gojwtmysql
+    build: .
+    ports:
+    - 8080:8080
+    container_name: gojwtmysql
+    env_file: .env
